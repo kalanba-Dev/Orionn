@@ -5,13 +5,12 @@ from flask import Flask, render_template, request, redirect, url_for, session
 from authlib.integrations.flask_client import OAuth
 
 app = Flask(__name__)
-app.secret_key = "supersecretkey"
+app.secret_key = os.environ.get("SECRET_KEY")
 
-# 🔐 VARIABLES SEGURAS (NO EN EL CÓDIGO)
+# 🔐 Google
 GOOGLE_CLIENT_ID = os.environ.get("GOOGLE_CLIENT_ID")
 GOOGLE_CLIENT_SECRET = os.environ.get("GOOGLE_CLIENT_SECRET")
 
-# OAuth config
 oauth = OAuth(app)
 google = oauth.register(
     name='google',
@@ -37,14 +36,12 @@ def init_db():
 
 init_db()
 
-# 🏠 HOME
+# 🏠 LANDING
 @app.route('/')
 def home():
-    if 'user' in session:
-        return redirect('/dashboard')
-    return redirect('/login')
+    return render_template('index.html')
 
-# 🔐 LOGIN NORMAL
+# 🔐 LOGIN
 @app.route('/login', methods=['GET', 'POST'])
 def login():
     if request.method == 'POST':
@@ -88,15 +85,12 @@ def register():
 def login_google():
     nonce = secrets.token_urlsafe(16)
     session['nonce'] = nonce
-
     redirect_uri = url_for('google_callback', _external=True)
     return google.authorize_redirect(redirect_uri, nonce=nonce)
 
-# 🔴 CALLBACK GOOGLE (ARREGLADO)
 @app.route('/google/callback')
 def google_callback():
     token = google.authorize_access_token()
-
     nonce = session.get('nonce')
     user_info = google.parse_id_token(token, nonce=nonce)
 
@@ -119,9 +113,9 @@ def dashboard():
 @app.route('/logout')
 def logout():
     session.clear()
-    return redirect('/login')
+    return redirect('/')
 
-# 🚀 RUN (IMPORTANTE PARA RENDER)
+# 🚀 RUN
 if __name__ == '__main__':
     port = int(os.environ.get("PORT", 10000))
     app.run(host='0.0.0.0', port=port)
