@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Perfil</title>
+<style>
+body {
+    background: #000;
+    color: white;
+    font-family: Arial;
+    text-align: center;
+}
+
+.card {
+    margin: 50px auto;
+    width: 300px;
+    padding: 20px;
+    border-radius: 20px;
+    background: rgba(255,255,255,0.05);
+    backdrop-filter: blur(20px);
+}
+</style>
+</head>
+
+<body>
+
+<div class="card">
+    <h2>{{ user }}</h2>
+    <p>{{ email }}</p>
+    <a href="/dashboard">Volver</a>
+</div>
+
+</body>
+</html>

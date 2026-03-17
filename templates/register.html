@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Register Orionn</title>
+
+<style>
+body {
+    margin: 0;
+    font-family: Arial;
+    background: linear-gradient(135deg,#000,#1a1a2e);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    color: white;
+}
+
+.box {
+    padding: 30px;
+    border-radius: 20px;
+    background: rgba(255,255,255,0.05);
+    backdrop-filter: blur(20px);
+}
+
+input, button {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border-radius: 10px;
+    border: none;
+}
+
+button {
+    background: cyan;
+}
+</style>
+</head>
+
+<body>
+
+<div class="box">
+<h2>Crear cuenta</h2>
+
+<form method="POST">
+<input name="username" placeholder="Usuario">
+<input name="email" placeholder="Correo">
+<input name="password" type="password" placeholder="Contraseña">
+<button>Registrar</button>
+</form>
+
+<a href="/login">Volver</a>
+</div>
+
+</body>
+</html>

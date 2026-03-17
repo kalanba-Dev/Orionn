@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Orionn</title>
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:system-ui,Arial;
+}
+
+body{
+background:#060606;
+color:white;
+overflow-x:hidden;
+}
+
+/* fondo animado */
+
+body::before{
+content:"";
+position:fixed;
+top:-50%;
+left:-50%;
+width:200%;
+height:200%;
+
+background:
+radial-gradient(circle at 20% 30%,#00eaff33,transparent),
+radial-gradient(circle at 80% 70%,#6af0ff22,transparent),
+radial-gradient(circle at 40% 80%,#ffffff11,transparent);
+
+animation:movebg 20s linear infinite;
+z-index:-1;
+}
+
+@keyframes movebg{
+0%{transform:rotate(0deg);}
+100%{transform:rotate(360deg);}
+}
+
+/* navbar */
+
+header{
+position:fixed;
+top:0;
+width:100%;
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:20px 40px;
+background:rgba(255,255,255,0.04);
+backdrop-filter:blur(20px);
+border-bottom:1px solid rgba(255,255,255,0.08);
+z-index:10;
+}
+
+.logo{
+font-size:26px;
+font-weight:700;
+letter-spacing:3px;
+}
+
+nav a{
+margin-left:25px;
+color:white;
+text-decoration:none;
+opacity:0.7;
+transition:0.3s;
+}
+
+nav a:hover{
+opacity:1;
+color:#00eaff;
+}
+
+/* hero */
+
+.hero{
+height:100vh;
+display:flex;
+flex-direction:column;
+justify-content:center;
+align-items:center;
+text-align:center;
+padding:20px;
+}
+
+.hero h1{
+font-size:90px;
+background:linear-gradient(90deg,#00eaff,#9af6ff,#00eaff);
+-webkit-background-clip:text;
+color:transparent;
+animation:shine 8s linear infinite;
+}
+
+.hero p{
+margin-top:15px;
+font-size:22px;
+color:#bdbdbd;
+max-width:600px;
+}
+
+.cta{
+margin-top:40px;
+padding:16px 45px;
+border-radius:25px;
+border:1px solid rgba(255,255,255,0.2);
+background:rgba(255,255,255,0.06);
+backdrop-filter:blur(20px);
+color:white;
+font-size:16px;
+cursor:pointer;
+transition:0.35s;
+}
+
+.cta:hover{
+transform:scale(1.1);
+background:rgba(0,234,255,0.15);
+}
+
+/* sections */
+
+.section{
+padding:120px 20px;
+text-align:center;
+}
+
+.section h2{
+font-size:40px;
+margin-bottom:20px;
+}
+
+.section p{
+color:#bdbdbd;
+max-width:700px;
+margin:auto;
+margin-top:10px;
+}
+
+/* phones */
+
+.phones{
+margin-top:70px;
+display:flex;
+flex-wrap:wrap;
+justify-content:center;
+gap:40px;
+}
+
+.phone{
+width:280px;
+border-radius:25px;
+background:rgba(255,255,255,0.05);
+backdrop-filter:blur(25px);
+border:1px solid rgba(255,255,255,0.1);
+padding:25px;
+transition:0.4s;
+}
+
+.phone:hover{
+transform:translateY(-15px) scale(1.05);
+box-shadow:0 20px 60px #00eaff33;
+}
+
+.phone img{
+width:100%;
+border-radius:18px;
+}
+
+.phone h3{
+margin-top:18px;
+font-size:22px;
+}
+
+.phone span{
+color:#aaa;
+font-size:14px;
+}
+
+/* os section */
+
+.os{
+margin-top:60px;
+padding:60px;
+border-radius:30px;
+background:rgba(255,255,255,0.05);
+backdrop-filter:blur(25px);
+border:1px solid rgba(255,255,255,0.08);
+max-width:900px;
+margin-left:auto;
+margin-right:auto;
+}
+
+/* footer */
+
+footer{
+margin-top:100px;
+padding:50px;
+text-align:center;
+color:#777;
+border-top:1px solid rgba(255,255,255,0.05);
+}
+
+@keyframes shine{
+0%{background-position:0%}
+100%{background-position:200%}
+}
+
+</style>
+</head>
+
+<body>
+
+<header>
+
+<div class="logo">ORIONN</div>
+
+<nav>
+<a href="#">Inicio</a>
+<a href="#">Dispositivos</a>
+<a href="#">Tecnología</a>
+<a href="#">Empresa</a>
+</nav>
+
+</header>
+
+
+
+<section class="hero">
+
+<h1>ORIONN</h1>
+
+<p>
+Smartphones diseñados para rendimiento extremo, diseño futurista
+y un sistema operativo propio que redefine la experiencia móvil.
+</p>
+
+<button class="cta">Explorar dispositivos</button>
+
+</section>
+
+
+
+<section class="section">
+
+<h2>Nuestros Smartphones</h2>
+
+<p>
+Orionn desarrolla dispositivos pensados para ofrecer potencia,
+eficiencia y una experiencia moderna para los usuarios.
+</p>
+
+<div class="phones">
+
+<div class="phone">
+
+<img src="https://picsum.photos/400/500">
+
+<h3>Orionn X</h3>
+
+<span>Gama media equilibrada con alto rendimiento.</span>
+
+</div>
+
+
+<div class="phone">
+
+<img src="https://picsum.photos/401/500">
+
+<h3>Orionn Titan 1</h3>
+
+<span>Diseñado para potencia extrema y batería duradera.</span>
+
+</div>
+
+
+<div class="phone">
+
+<img src="https://picsum.photos/402/500">
+
+<h3>Orionn Ultra Plus</h3>
+
+<span>La experiencia premium con la tecnología más avanzada.</span>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<section class="section">
+
+<h2>Diseñados para el futuro</h2>
+
+<p>
+En Orionn creemos que la tecnología debe evolucionar constantemente.
+Por eso diseñamos nuestros dispositivos combinando ingeniería moderna,
+materiales de alta calidad y software optimizado para ofrecer la mejor
+experiencia posible.
+</p>
+
+<p>
+Cada smartphone Orionn está pensado para durar, con hardware potente
+capaz de manejar juegos, aplicaciones exigentes y tareas intensivas
+sin comprometer la estabilidad del sistema.
+</p>
+
+</section>
+
+
+
+<section class="section">
+
+<h2>Tecnología Orionn</h2>
+
+<p>
+Nuestros dispositivos integran componentes seleccionados para ofrecer
+máximo rendimiento. Pantallas de alta tasa de refresco, procesadores
+de alto desempeño y baterías de gran capacidad permiten que los
+smartphones Orionn se mantengan rápidos y eficientes durante todo el día.
+</p>
+
+<p>
+La optimización entre hardware y software permite aprovechar cada
+recurso del sistema para mejorar el rendimiento y reducir el consumo
+de energía.
+</p>
+
+</section>
+
+
+
+<section class="section">
+
+<h2>Sistema Operativo</h2>
+
+<div class="os">
+
+<h3>sassensOS</h3>
+
+<p>
+sassensOS es el sistema operativo desarrollado para los dispositivos
+Orionn. Basado en Linux y optimizado para velocidad y estabilidad,
+ofrece una experiencia moderna con gran capacidad de personalización.
+</p>
+
+<p>
+Su arquitectura permite aprovechar al máximo el hardware del dispositivo
+para ofrecer rendimiento constante, seguridad y eficiencia energética.
+</p>
+
+</div>
+
+</section>
+
+
+
+<section class="section">
+
+<h2>Sobre Orionn</h2>
+
+<p>
+Orionn es una empresa tecnológica enfocada en el desarrollo de
+smartphones y software innovador. Nuestro objetivo es crear
+dispositivos que no solo sean potentes, sino que también
+ofrezcan una identidad propia en diseño y experiencia.
+</p>
+
+<p>
+Con una filosofía centrada en el usuario, Orionn busca construir
+un ecosistema tecnológico moderno capaz de competir con las
+marcas más reconocidas del mercado.
+</p>
+
+</section>
+
+
+
+<footer>
+
+© 2026 Orionn Technology
+
+</footer>
+
+
+</body>
+</html>

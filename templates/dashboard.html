@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Orionn</title>
+
+<style>
+body {
+    margin: 0;
+    font-family: Arial;
+    background: linear-gradient(135deg,#000,#0f2027);
+    color: white;
+}
+
+/* NAV */
+.nav {
+    display: flex;
+    justify-content: space-between;
+    padding: 15px;
+    background: rgba(255,255,255,0.05);
+    backdrop-filter: blur(20px);
+}
+
+/* CARDS */
+.card {
+    margin: 20px;
+    padding: 20px;
+    border-radius: 20px;
+    background: rgba(255,255,255,0.05);
+    backdrop-filter: blur(20px);
+    box-shadow: 0 0 30px rgba(0,255,255,0.2);
+    transition: 0.3s;
+}
+
+.card:hover {
+    transform: scale(1.03);
+}
+
+.glow {
+    color: #00f2ff;
+}
+
+a {
+    color: cyan;
+}
+</style>
+
+</head>
+
+<body>
+
+<div class="nav">
+    <h2 class="glow">Orionn</h2>
+    <a href="/logout">Cerrar sesión</a>
+</div>
+
+<div class="card">
+    <h1>Bienvenido {{ user }}</h1>
+    <p>Cuenta</p>
+</div>
+
+<div class="card">
+    <h2>Perfil</h2>
+    <p>Correo: {{ email }}</p>
+</div>
+
+</body>
+</html>
