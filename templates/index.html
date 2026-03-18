@@ -3,215 +3,61 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Orionn</title>
+<title>Orionn Technology</title>
+
+<!-- Fuente moderna -->
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
 
 <style>
-
-*{
-margin:0;
-padding:0;
-box-sizing:border-box;
-font-family:system-ui,Arial;
-}
-
-body{
-background:#060606;
-color:white;
-overflow-x:hidden;
-}
-
-/* fondo animado */
-body::before{
-content:"";
-position:fixed;
-top:-50%;
-left:-50%;
-width:200%;
-height:200%;
-
-background:
-radial-gradient(circle at 20% 30%,#00eaff33,transparent),
+*{margin:0;padding:0;box-sizing:border-box;font-family:'Poppins',system-ui,Arial;}
+body{background:#060606;color:white;overflow-x:hidden;}
+body::before{content:"";position:fixed;top:-50%;left:-50%;width:200%;height:200%;
+background:radial-gradient(circle at 20% 30%,#00eaff33,transparent),
 radial-gradient(circle at 80% 70%,#6af0ff22,transparent),
 radial-gradient(circle at 40% 80%,#ffffff11,transparent);
+animation:movebg 25s linear infinite;z-index:-1;}
+@keyframes movebg{0%{transform:rotate(0deg);}100%{transform:rotate(360deg);}}
 
-animation:movebg 20s linear infinite;
-z-index:-1;
-}
+header{position:fixed;top:0;width:100%;display:flex;justify-content:space-between;align-items:center;padding:20px 40px;background:rgba(255,255,255,0.05);backdrop-filter:blur(25px);border-bottom:1px solid rgba(255,255,255,0.08);z-index:10;}
+.logo{font-size:28px;font-weight:700;letter-spacing:4px;}
+nav a{margin-left:25px;color:white;text-decoration:none;opacity:0.8;transition:0.3s;}
+nav a:hover{opacity:1;color:#00eaff;}
 
-@keyframes movebg{
-0%{transform:rotate(0deg);}
-100%{transform:rotate(360deg);}
-}
+.hero{height:100vh;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;padding:20px;}
+.hero h1{font-size:100px;background:linear-gradient(90deg,#00eaff,#9af6ff,#00eaff);-webkit-background-clip:text;color:transparent;animation:shine 8s linear infinite;}
+.hero p{margin-top:20px;font-size:24px;color:#bdbdbd;max-width:700px;line-height:1.5;}
+.hero .cta-container{margin-top:40px;}
+.cta, .login-btn, .register-btn{margin:10px;padding:16px 45px;border-radius:25px;border:none;font-size:16px;cursor:pointer;transition:.35s;}
+.cta{background:rgba(255,255,255,0.08);backdrop-filter:blur(25px);color:white;border:1px solid rgba(255,255,255,0.2);}
+.cta:hover{transform:scale(1.1);background:rgba(0,234,255,0.15);}
+.login-btn{background:#00f7ff;color:black;}
+.register-btn{border:2px solid #8a2be2;background:transparent;color:#8a2be2;}
+.login-btn:hover,.register-btn:hover{transform:scale(1.1);box-shadow:0 0 20px #00eaff;}
 
-/* navbar */
-header{
-position:fixed;
-top:0;
-width:100%;
-display:flex;
-justify-content:space-between;
-align-items:center;
-padding:20px 40px;
-background:rgba(255,255,255,0.04);
-backdrop-filter:blur(20px);
-border-bottom:1px solid rgba(255,255,255,0.08);
-z-index:10;
-}
+.section{padding:140px 20px;text-align:center;}
+.section h2{font-size:48px;margin-bottom:25px;}
+.section p{color:#bdbdbd;max-width:800px;margin:auto;margin-top:15px;line-height:1.6;}
 
-.logo{
-font-size:26px;
-font-weight:700;
-letter-spacing:3px;
-}
+.phones{margin-top:80px;display:flex;flex-wrap:wrap;justify-content:center;gap:50px;}
+.phone{width:300px;border-radius:25px;background:rgba(255,255,255,0.05);backdrop-filter:blur(30px);border:1px solid rgba(255,255,255,0.1);padding:30px;transition:0.5s;}
+.phone:hover{transform:translateY(-20px) scale(1.07);box-shadow:0 25px 70px #00eaff44;}
+.phone img{width:100%;border-radius:20px;}
+.phone h3{margin-top:20px;font-size:24px;}
+.phone span{color:#aaa;font-size:15px;}
 
-nav a{
-margin-left:25px;
-color:white;
-text-decoration:none;
-opacity:0.7;
-transition:0.3s;
-}
+.os{margin-top:60px;padding:70px;border-radius:35px;background:rgba(255,255,255,0.05);backdrop-filter:blur(25px);border:1px solid rgba(255,255,255,0.08);max-width:1000px;margin-left:auto;margin-right:auto;text-align:left;}
+.os img{width:100%;border-radius:20px;margin-top:25px;}
 
-nav a:hover{
-opacity:1;
-color:#00eaff;
-}
+.tech, .work{margin-top:60px;padding:60px;max-width:900px;margin-left:auto;margin-right:auto;border-radius:30px;background:rgba(255,255,255,0.04);backdrop-filter:blur(20px);border:1px solid rgba(255,255,255,0.07);}
+.tech h3, .work h3{font-size:28px;margin-bottom:15px;color:#00eaff;}
+.tech p, .work p{color:#ccc;line-height:1.6;}
 
-/* hero */
-.hero{
-height:100vh;
-display:flex;
-flex-direction:column;
-justify-content:center;
-align-items:center;
-text-align:center;
-padding:20px;
-}
-
-.hero h1{
-font-size:90px;
-background:linear-gradient(90deg,#00eaff,#9af6ff,#00eaff);
--webkit-background-clip:text;
-color:transparent;
-animation:shine 8s linear infinite;
-}
-
-.hero p{
-margin-top:15px;
-font-size:22px;
-color:#bdbdbd;
-max-width:600px;
-}
-
-/* botones */
-.cta{
-padding:16px 45px;
-border-radius:25px;
-border:1px solid rgba(255,255,255,0.2);
-background:rgba(255,255,255,0.06);
-backdrop-filter:blur(20px);
-color:white;
-font-size:16px;
-cursor:pointer;
-transition:0.35s;
-box-shadow:0 0 20px rgba(0,234,255,0.15);
-}
-
-.cta:hover{
-transform:scale(1.1);
-background:rgba(0,234,255,0.15);
-box-shadow:0 0 40px rgba(0,234,255,0.4);
-}
-
-/* sections */
-.section{
-padding:120px 20px;
-text-align:center;
-}
-
-.section h2{
-font-size:40px;
-margin-bottom:20px;
-}
-
-.section p{
-color:#bdbdbd;
-max-width:700px;
-margin:auto;
-margin-top:10px;
-}
-
-/* phones */
-.phones{
-margin-top:70px;
-display:flex;
-flex-wrap:wrap;
-justify-content:center;
-gap:40px;
-}
-
-.phone{
-width:280px;
-border-radius:25px;
-background:rgba(255,255,255,0.05);
-backdrop-filter:blur(25px);
-border:1px solid rgba(255,255,255,0.1);
-padding:25px;
-transition:0.4s;
-}
-
-.phone:hover{
-transform:translateY(-15px) scale(1.05);
-box-shadow:0 20px 60px #00eaff33;
-}
-
-.phone img{
-width:100%;
-border-radius:18px;
-}
-
-.phone h3{
-margin-top:18px;
-font-size:22px;
-}
-
-.phone span{
-color:#aaa;
-font-size:14px;
-}
-
-/* os section */
-.os{
-margin-top:60px;
-padding:60px;
-border-radius:30px;
-background:rgba(255,255,255,0.05);
-backdrop-filter:blur(25px);
-border:1px solid rgba(255,255,255,0.08);
-max-width:900px;
-margin-left:auto;
-margin-right:auto;
-}
-
-/* footer */
-footer{
-margin-top:100px;
-padding:50px;
-text-align:center;
-color:#777;
-border-top:1px solid rgba(255,255,255,0.05);
-}
-
-@keyframes shine{
-0%{background-position:0%}
-100%{background-position:200%}
-}
-
+footer{margin-top:120px;padding:60px;text-align:center;color:#777;border-top:1px solid rgba(255,255,255,0.05);}
+@keyframes shine{0%{background-position:0%}100%{background-position:200%}}
 </style>
 </head>
 
 <body>
-
 <header>
 <div class="logo">ORIONN</div>
 <nav>
@@ -219,84 +65,75 @@ border-top:1px solid rgba(255,255,255,0.05);
 <a href="#">Dispositivos</a>
 <a href="#">Tecnología</a>
 <a href="#">Empresa</a>
+<a href="/login">Iniciar sesión</a>
+<a href="/register">Registrarse</a>
 </nav>
 </header>
 
 <section class="hero">
-
 <h1>ORIONN</h1>
-
-<p>
-Smartphones diseñados para rendimiento extremo, diseño futurista
-y un sistema operativo propio que redefine la experiencia móvil.
-</p>
-
-<!-- 🔥 BOTONES PRO -->
-<div style="margin-top:40px; display:flex; gap:15px; flex-wrap:wrap; justify-content:center;">
-
-<a href="/login">
-<button class="cta">Iniciar sesión</button>
-</a>
-
-<a href="/register">
-<button class="cta">Crear cuenta</button>
-</a>
-
-<a href="/login/google">
-<button class="cta" style="background:linear-gradient(90deg,#ff4b4b,#ff0000); border:none;">
-Acceder con Google
-</button>
-</a>
-
+<p>Smartphones futuristas con rendimiento extremo y sassensOS, nuestro sistema operativo propio que transforma la experiencia móvil.</p>
+<div class="cta-container">
+<a href="/login"><button class="login-btn">Iniciar sesión</button></a>
+<a href="/register"><button class="register-btn">Registrarse</button></a>
+<a href="#phones"><button class="cta">Explorar dispositivos</button></a>
 </div>
-
 </section>
 
-<section class="section">
+<section id="phones" class="section">
 <h2>Nuestros Smartphones</h2>
-<p>
-Orionn desarrolla dispositivos pensados para ofrecer potencia,
-eficiencia y una experiencia moderna para los usuarios.
-</p>
-
+<p>Orionn desarrolla dispositivos con potencia, eficiencia y diseño moderno. Desde gama media hasta experiencia premium, cada dispositivo está pensado para el usuario actual.</p>
 <div class="phones">
-
 <div class="phone">
-<img src="https://picsum.photos/400/500">
+<img src="/static/images/orionnx.png" alt="Orionn X">
 <h3>Orionn X</h3>
-<span>Gama media equilibrada con alto rendimiento.</span>
+<span>Gama media con balance entre rendimiento y diseño.</span>
 </div>
-
 <div class="phone">
-<img src="https://picsum.photos/401/500">
+<img src="/static/images/orionntitanxd.png" alt="Orionn Titan 1">
 <h3>Orionn Titan 1</h3>
-<span>Diseñado para potencia extrema y batería duradera.</span>
+<span>Máximo rendimiento y batería duradera para todo el día.</span>
 </div>
-
 <div class="phone">
-<img src="https://picsum.photos/402/500">
+<img src="/static/images/orionnultraplus.png" alt="Orionn Ultra Plus">
 <h3>Orionn Ultra Plus</h3>
-<span>La experiencia premium con la tecnología más avanzada.</span>
+<span>Experiencia premium con lo último en tecnología y diseño.</span>
 </div>
-
 </div>
 </section>
 
 <section class="section">
-<h2>Sistema Operativo</h2>
-
+<h2>sassensOS: Nuestro Sistema Operativo</h2>
+<p>sassensOS combina compatibilidad, velocidad y seguridad para sacar el máximo partido a cada smartphone Orionn. Optimizado para aplicaciones modernas y gaming extremo.</p>
 <div class="os">
-<h3>sassensOS</h3>
-<p>
-Sistema operativo basado en Linux optimizado para rendimiento y personalización.
-</p>
+<img src="/static/images/ingeniero_sassensos.jpg" alt="Ingeniero creando sassensOS">
+<p>Ingenieros trabajan en cada placa base, desarrollando el software a nivel de hardware para lograr un sistema estable, rápido y personalizable.</p>
 </div>
+</section>
 
+<section class="tech">
+<h3>Tecnología y Rendimiento</h3>
+<p>Optimización entre hardware y software: pantallas de alta tasa de refresco, procesadores de alto rendimiento y batería eficiente. Cada componente está pensado para que el usuario disfrute al máximo.</p>
+</section>
+
+<section class="work">
+<h3>Cómo trabajamos</h3>
+<p>Ingenieros y diseñadores colaboran para ensamblar cada dispositivo, desde la placa base hasta el código de sassensOS, asegurando calidad, estabilidad y rendimiento.</p>
 </section>
 
 <footer>
-© 2026 Orionn Technology
+© 2026 Orionn Technology | Creado por kalaba
 </footer>
+
+<script>
+// JS mínimo: scroll suave y alert CTA
+document.querySelectorAll('a[href^="#"]').forEach(anchor=>{
+anchor.addEventListener('click', function(e){
+e.preventDefault();
+document.querySelector(this.getAttribute('href')).scrollIntoView({behavior:'smooth'});
+});
+});
+</script>
 
 </body>
 </html>
